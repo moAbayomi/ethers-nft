@@ -205,6 +205,32 @@ document.addEventListener("DOMContentLoaded", async () => {
     addressBox.textContent = NFTContractFactory.address;
   }
 
+  async function listNft(nftAddress, tokenId, price) {
+    if(NFTContractFactory) {
+      const tx = await NFTContractFactory.listNft(nftAddress, tokenId, price);
+      await tx.wait();
+      console.log('NFT listed successfully!');
+    } else {
+      console.log("connect wallet first !");
+      return;
+}
+    
+}
+
+async function buyNft(nftAddress, tokenId) {
+  if(NFTContractFactory) {
+     const tx = await NFTContractFactory.buyNft(nftAddress, tokenId, {
+        value: ethers.utils.parseEther('0.1'), // Replace with the actual amount of Ether you want to send
+    });
+    await tx.wait();
+    console.log('NFT bought successfully!');
+  } else {
+      console.log("connect wallet first !");
+      return;
+}
+   
+}
+
   // console.log(await signer.getAddress());
 
   connectButton.addEventListener("click", async () => {
