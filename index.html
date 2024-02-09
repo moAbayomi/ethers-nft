@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://cdn.ethers.io/lib/ethers-5.2.umd.min.js"
+      type="application/javascript"
+    ></script>
+    <script type="module" src="index.js"></script>
+    <title>test script</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: monospace;
+        margin-inline: auto;
+        padding-inline: 2rem;
+      }
+
+      .container {
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+        align-items: start;
+        gap: 2rem;
+        padding-top: 2rem;
+        background: rgb(229, 222, 222);
+      }
+      div {
+        display: flex;
+      }
+
+      header.header {
+        display: flex;
+        margin-left: auto;
+        gap: 1rem;
+      }
+
+      button {
+        padding-block: 0.4rem;
+        padding-inline: 1rem;
+        margin-bottom: 12px;
+        font-size: 1rem;
+        border-radius: 5px;
+        background: black;
+        color: white;
+        border: none;
+        cursor: pointer;
+        transition: all 0.12s ease-in-out;
+      }
+
+      button:hover {
+        background: gray;
+        color: white;
+        transform: scale(1.01);
+      }
+
+      .error {
+        color: red;
+      }
+
+      .connected-address {
+        color: green;
+      }
+
+      .footer {
+        margin-top: 2rem;
+        display: none;
+        text-transform: uppercase;
+        color: rgb(4, 79, 4);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <!-- practice script, tinkering ... yunno -->
+      <header class="header">
+        <button class="connect-metamask">connect</button>
+        <p><span class="connected-address"></span></p>
+      </header>
+      <h1>ahoy !</h1>
+      <p>test script, just tinkering ...</p>
+
+      <div>
+        <button class="get-marketplace-address">
+          get nft marketplace address
+        </button>
+        <p class="address-box"></p>
+      </div>
+      <p class="error"></p>
+
+      <p class="footer">
+        now you can check the console for all kinds of methods you can call on
+        the nft market place contract
+      </p>
+    </div>
+  </body>
+</html>
